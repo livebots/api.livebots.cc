@@ -1,0 +1,36 @@
+{
+  "name": "api.livebots.cc",
+  "version": "0.0.0",
+  "description": "api for the live-nodebots api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node_modules/.bin/nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nko4/live-nodebots"
+  },
+  "keywords": [
+    "node",
+    "nodebots"
+  ],
+  "author": [
+    "David Dias <daviddias.p@gmail.com>",
+    "Francisco Dias <>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nko4/live-nodebots/issues"
+  },
+  "dependencies": {
+    "restify": "~2.6.0",
+    "bunyan": "~0.22.0",
+    "async": "~0.2.9",
+    "mongoose": "~3.8.0",
+    "joi": "~2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "~0.7.10"
+  }
+}
