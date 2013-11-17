@@ -29,7 +29,7 @@
     "async": "~0.2.9",
     "mongoose": "~3.8.0",
     "joi": "~2.0.3",
-    "keys": "git+ssh://git@github.com:diasdavid/keys.livebots.cc.git",
+    "keys": "git+ssh://git@github.com:diasdavid/keys.livebots.cc.git"
   },
   "devDependencies": {
     "nodemon": "~0.7.10"
