@@ -8,6 +8,7 @@ if (process.env.NODE_ENV){
   mongo_url = 'mongodb://localhost/livebots_dev';
 }
 
+
 require('./models/bots');
 require('./models/commands');
 
