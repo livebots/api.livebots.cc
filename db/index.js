@@ -1,5 +1,12 @@
 var mongoose = require('mongoose');
-var mongo_url = process.env.MONGOHQ_URL || 'mongodb://localhost/livebots_dev';
+var keys     = require('keys');
+
+var mongo_url;
+if (process.env.NODE_ENV){
+  mongo_url = 'mongodb://' + keys.mongo_user + ':' + 'keys.mongo_password' + "@SOMEURL:PORT/livebots"
+} else {
+  mongo_url = 'mongodb://localhost/livebots_dev';
+}
 
 require('./models/bots');
 require('./models/commands');

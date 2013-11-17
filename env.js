@@ -7,8 +7,6 @@ exports.init = init;
 
 function init(server, cb) {
 
-  // joi.settings.allowUnknown = true;
-
   server.log.level('info');
 
   server.use(restify.throttle({
