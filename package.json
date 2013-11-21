@@ -1,5 +1,5 @@
 {
-  "name": "api.livebots.cc",
+  "name": "api",
   "version": "0.0.0",
   "description": "api for the live-nodebots api",
   "main": "index.js",
