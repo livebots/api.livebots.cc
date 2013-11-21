@@ -1,9 +1,10 @@
 var mongoose = require('mongoose');
-var keys     = require('keys');
+var keys     = require('./../secrets.json');
 var mongo_url;
 
 // BEFORE DEPLOY MAKE SURE YOU ARE USING THE REMOTE DB
-mongo_url = 'mongodb://' + keys.mongo_user + ':' + 'keys.mongo_password' + "@SOMEURL:PORT/livebots"
+mongo_url = process.env.MONGOURL
+// mongo_url = 'mongodb://' + keys.mongo_user + ':' + keys.mongo_password + '@' + keys.mongo_url + ':' + keys.mongo_port + '/livebots';
 // mongo_url = 'mongodb://localhost/livebots_dev';
 
 require('./models/bots');
