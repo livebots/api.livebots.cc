@@ -4,7 +4,6 @@ var mongo_url;
 
 // BEFORE DEPLOY MAKE SURE YOU ARE USING THE REMOTE DB
 mongo_url = process.env.MONGOURL
-// mongo_url = 'mongodb://' + keys.mongo_user + ':' + keys.mongo_password + '@' + keys.mongo_url + ':' + keys.mongo_port + '/livebots';
 // mongo_url = 'mongodb://localhost/livebots_dev';
 
 require('./models/bots');
