@@ -6,7 +6,6 @@ var db       = require('./db');
 exports.init = init;
 
 function init(server, cb) {
-
   server.log.level('info');
 
   server.use(restify.throttle({
