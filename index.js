@@ -13,7 +13,6 @@ restify.createServer({
 
 exports.init = init;
 
-
 function init(cb) {
   env.init(server, function() {
 
@@ -35,6 +34,4 @@ function init(cb) {
   });
 }
 
-if (require.main == module) {
-  init();
-}
+if (require.main == module) { init(); }
