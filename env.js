@@ -14,6 +14,7 @@ function init(server, cb) {
     rate: 50,
     ip: true
   }));
+  server.use(restify.CORS());
   server.use(restify.acceptParser(server.acceptable));
   server.use(restify.queryParser());
   server.use(restify.bodyParser());
