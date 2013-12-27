@@ -21,5 +21,5 @@ botSchema.statics.findAll = function (cb) {
   this.find({},cb);
 };
 
-
+ 
 var Bot = module.exports = mongoose.model('Bot', botSchema);

@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
 var mongo_url;
 
-mongo_url = process.env.MONGOURL
-// mongo_url = 'mongodb://localhost/livebots_dev';
+mongo_url = process.env.MONGOURL || 'mongodb://localhost/livebots_dev';
 
 require('./models/bots');
 require('./models/commands');
