@@ -15,14 +15,14 @@ function validate(req, res, next) {
 }
 
 var schema = {
-  bot_id: joi.string().required(),
+  id: joi.string().required(),
 };
 
 /// get bot
 
 function get(req, res, next) {
 
-  var botId = req.params.bot_id;
+  var botId = req.params.id;
   var bot   = {};
 
   async.series([
@@ -35,14 +35,14 @@ function get(req, res, next) {
     function gotBot(err, result) {
       if (err) cb(err);
       if (result.length > 0) {
-        if (result[0].bot_id) bot.bot_id = result[0].bot_id;
-        if (result[0].bot_name) bot.bot_name = result[0].bot_name;
-        if (result[0].bot_key) bot.bot_key = result[0].bot_key;
-        if (result[0].bot_state) bot.bot_state = result[0].bot_state;
+        if (result[0].id) bot.id = result[0].id;
+        if (result[0].name) bot.name = result[0].name;
+        if (result[0].key) bot.key = result[0].key;
+        if (result[0].state) bot.state = result[0].state;
         if (result[0].address) bot.address = result[0].address;
         if (result[0].commands) bot.commands = result[0].commands;
-        if (result[0].livefeedurl) bot.livefeedurl = result[0].livefeedurl;
-        if (result[0].photourl) bot.photourl = result[0].photourl;
+        if (result[0].liveFeedURL) bot.liveFeedURL = result[0].liveFeedURL;
+        if (result[0].photoURL) bot.photoURL = result[0].photoURL;
         if (result[0].description) bot.description = result[0].description;      
         cb();
       } else {

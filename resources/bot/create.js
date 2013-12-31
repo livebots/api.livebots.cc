@@ -10,20 +10,21 @@ exports.validate = validate;
 /// validate
 
 function validate(req, res, next) {
+  console.log(req.params)
   var err = joi.validate(req.params, schema);
   if (err) res.send(new restify.InvalidArgumentError(err.message));
   else next();
 }
 
 var schema = {
-  bot_id: joi.string().required(),
-  bot_name: joi.string().required(),
+  id: joi.string().required(),
+  name: joi.string().required(),
   commands: joi.array().includes(joi.string()),
   address: joi.string(),
   description: joi.string(),
-  photourl: joi.string(),
-  livefeedurl: joi.string(),
-  bot_visible: joi.boolean()
+  photoURL: joi.string(),
+  liveFeedURL: joi.string(),
+  visible: joi.boolean()
 };
 
 /// create bot
@@ -38,16 +39,16 @@ function create(req, res, next) {
     ], done);
 
   function createBot(cb) {
-    bot.bot_id = req.params.bot_id;
-    bot.bot_name = req.params.bot_name;
-    bot.bot_key = uuid();
-    bot.bot_state = false;
-    bot.bot_visible = req.params.bot_visible || true;
+    bot.id = req.params.id;
+    bot.name = req.params.name;
+    bot.key = uuid();
+    bot.state = false;
+    bot.visible = req.params.visible || true;
     if (req.params.address) bot.address = req.params.address;
     if (req.params.commands) bot.commands = req.params.commands;
     if (req.params.description) bot.description = req.params.description;
-    if (req.params.photourl) bot.photourl = req.params.photourl;
-    if (req.params.livefeedurl) bot.livefeedurl = req.params.livefeedurl;
+    if (req.params.photoURL) bot.photoURL = req.params.photoURL;
+    if (req.params.liveFeedURL) bot.liveFeedURL = req.params.liveFeedURL;
 
     cb();
   }

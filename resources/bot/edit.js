@@ -16,21 +16,21 @@ function validate(req, res, next) {
 }
 
 var schema = {
-  current_bot_id: joi.string().required(),
-  bot_id: joi.string(),
-  bot_name: joi.string(),
+  current_id: joi.string().required(),
+  id: joi.string(),
+  name: joi.string(),
   commands: joi.array().includes(joi.string()),
   address: joi.string(),
   description: joi.string(),
-  photourl: joi.string(),
-  livefeedurl: joi.string(),
-  bot_visible: joi.boolean()
+  photoURL: joi.string(),
+  liveFeedURL: joi.string(),
+  visible: joi.boolean()
 };
 
 /// create bot
 
 function edit(req, res, next) {
-  var currentBotId = req.params.current_bot_id;
+  var currentBotId = req.params.current_id;
   assert(currentBotId, 'must have the current bot ID');
 
   var bot;
@@ -53,14 +53,14 @@ function edit(req, res, next) {
 
   function editBot(cb) {
 
-    if (req.params.bot_id) bot.bot_id = req.params.bot_id;
-    if (req.params.bot_name) bot.bot_name = req.params.bot_name;
-    if (req.params.bot_key) bot.bot_key = req.params.bot_key;
-    if (req.params.bot_state !== null) bot.bot_state = req.params.bot_state;
+    if (req.params.id) bot.id = req.params.id;
+    if (req.params.name) bot.name = req.params.name;
+    if (req.params.key) bot.key = req.params.key;
+    if (req.params.state !== null) bot.state = req.params.state;
     if (req.params.address) bot.address = req.params.address;
     if (req.params.commands) bot.commands = req.params.commands;
-    if (req.params.livefeedurl) bot.livefeedurl = req.params.livefeedurl;
-    if (req.params.photourl) bot.photourl = req.params.photourl;
+    if (req.params.liveFeedURL) bot.liveFeedURL = req.params.liveFeedURL;
+    if (req.params.photoURL) bot.photoURL = req.params.photoURL;
     if (req.params.description) bot.description = req.params.description;
     cb();
   }
